@@ -4,7 +4,8 @@
   "description": "Code examples for QA Backend presentation",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage":"jest --coverage"
   },
   "author": "Dimitar Nikolov",
   "license": "ISC",
