@@ -1,26 +1,64 @@
 const Sum = require('./sum');
 
-test('Sum of [1, 2] should be 3', () => {
-    expect(Sum([1, 2])).toBe(3);
+describe("Sum function tests that pass", () => {
+
+    it('should return 3 when array is [1, 2]', () => {
+        let array = [1, 2];
+        let result = Sum(array);
+
+        expect(result).toEqual(3);
+
+        //Shorter syntaksys:
+        //expect(Sum([1, 2])).toBe(3);
+    });
+
+    it('should return 10 when array is [5, 5]', () => {
+        let array = [5, 5];
+        let result = Sum(array);
+
+        expect(result).toEqual(10);
+
+        //Shorter syntaksys:
+        //expect(Sum([5, 5])).toBe(10);
+    });
+
+    it('should not return 5 when array is [1, 2]', () => {
+        let array = [1, 2];
+        let result = Sum(array);
+
+        expect(result).not.toEqual(5);
+    });
+
+    it('should return 0 when array is empty', () => {
+        let array = [];
+        let result = Sum(array);
+
+        expect(result).toEqual(0);
+    });
+
+    it('should return 1 when array holds only [1]', () => {
+        let array = [1];
+        let result = Sum(array);
+
+        expect(result).toEqual(1);
+    });
+
+    it('should concatenate array of strings', () => {
+        let array = ["one", "two"];
+        let result = Sum(array);
+
+        expect(result).toEqual("onetwo");
+    });
 });
 
-test('Sum of [5, 5] should be 10', () => {
-    expect(Sum([5, 5])).toBe(10);
-});
+describe('Sum function tests that fail', () => {
 
-test('Sum of [1, 2] should not be 5', () => {
-    expect(Sum([1, 2])).not.toBe(5);
-});
+    //this one is supposed to fail due to wrong expected result
+    it('should return 2 is array is [1, 1]', () => {
+        let array = [1, 1];
+        let result = Sum(array);
 
-test('Sum of an empty array should be 0', () => {
-    expect(Sum([])).toBe(0);
-});
+        expect(result).toEqual(3);
+    });
 
-test('Sum of an 1 should be 1', () => {
-    expect(Sum([1])).toBe(1);
-});
-
-//this one must fail!
-test('Sum of [1, 1] should be 2', () => {
-    expect(Sum([1, 1])).toBe(3);
 });

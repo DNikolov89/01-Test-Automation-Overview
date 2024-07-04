@@ -1,3 +1,5 @@
+//simple function that sums the numbers in an array
+
 function Sum(arr) {
     if (arr.length === 0)
         return 0;
